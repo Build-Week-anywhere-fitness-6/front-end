@@ -1,11 +1,13 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
 import logo from './logo.svg';
 import './App.css';
+import { Route } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
+import PrivateRoute from './components/PrivateRoute';
 import Landing from "./components/Landing";
+
 
 function App() {
   return (
@@ -23,7 +25,6 @@ function App() {
             </Route>
         </Switch>
         </BrowserRouter>
-    
     </div>
   );
 }
