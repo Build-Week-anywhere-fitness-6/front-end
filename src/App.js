@@ -1,5 +1,5 @@
 import './App.css';
-import { Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import PrivateRoute from './components/PrivateRoute';
@@ -7,12 +7,17 @@ import PrivateRoute from './components/PrivateRoute';
 function App() {
   return (
     <div className='App'>
-      <Route path='/login'>
-        <Login />
-      </Route>
-      <Route path='/register'>
-        <Register />
-      </Route>
+      <Router>
+        <Route path='/register'>
+          <Register />
+        </Route>
+        <Route path='/login'>
+          <Login />
+        </Route>
+        <Route path='/'>
+          <Login />
+        </Route>
+      </Router>
     </div>
   );
 }
