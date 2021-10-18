@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default function Login() {
   return (
     <StyledForm>
-      <h1>Login</h1>
+      <StyledTitle>Login</StyledTitle>
       <StyledFormField>
         <StyledLabel>
           Username
@@ -20,6 +20,10 @@ export default function Login() {
     </StyledForm>
   );
 }
+
+const StyledTitle = styled.h1`
+  text-align: center;
+`;
 
 const StyledForm = styled.form`
   margin: 0 auto;

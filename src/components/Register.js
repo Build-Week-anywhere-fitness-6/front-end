@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function Register() {
   return (
     <StyledForm>
-      <h1>Sign Up</h1>
+      <StyledTitle>Sign Up</StyledTitle>
       <StyledFormField>
         <StyledLabel>
           Email
@@ -34,6 +34,10 @@ export default function Register() {
     </StyledForm>
   );
 }
+
+const StyledTitle = styled.h1`
+  text-align: center;
+`;
 
 const StyledForm = styled.form`
   margin: 0 auto;
