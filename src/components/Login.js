@@ -3,23 +3,17 @@ export default function Login() {
     <form className='form-container'>
       <h1>Login</h1>
       <div className='form-field'>
-      <label>Username
-          <input
-            
-            name='username'
-            type='text'
-          />
+        <label>
+          Username
+          <input name='username' type='text' />
         </label>
 
-        <label>Password
-          <input
-            
-            name='username'
-            type='text'
-          />
+        <label>
+          Password
+          <input name='username' type='text' />
         </label>
 
-        <button>Log in</button>
+        <button className='user-btn'>Log in</button>
       </div>
     </form>
   );
