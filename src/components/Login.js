@@ -3,9 +3,23 @@ export default function Login() {
     <form className='form-container'>
       <h1>Login</h1>
       <div className='form-field'>
-        {/* USERNAME */}
-        {/* PASSWORD */}
-        {/* LOGIN BUTTON */}
+      <label>Username
+          <input
+            
+            name='username'
+            type='text'
+          />
+        </label>
+
+        <label>Password
+          <input
+            
+            name='username'
+            type='text'
+          />
+        </label>
+
+        <button>Log in</button>
       </div>
     </form>
   );
