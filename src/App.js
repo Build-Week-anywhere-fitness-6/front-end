@@ -1,13 +1,29 @@
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import logo from './logo.svg';
 import './App.css';
 import Login from './components/Login';
 import Register from './components/Register';
+import Landing from "./components/Landing";
 
 function App() {
   return (
     <div className='App'>
-      <Login />
-      <Register />
+      <BrowserRouter>
+          <Switch>
+          <Route exact path ="/">
+            <Landing />
+            </Route>
+            <Route exact path ="/login">
+            <Login />
+            </Route>
+            <Route exact path ="/register" >
+               <Register />
+            </Route>
+        </Switch>
+        </BrowserRouter>
+    
     </div>
   );
 }
