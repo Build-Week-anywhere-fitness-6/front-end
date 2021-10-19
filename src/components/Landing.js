@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { RiLoginBoxFill } from "react-icons/ri"
 import { GiArchiveRegister } from "react-icons/gi";
-import "./landing.css"
+import './landing.css';
+
+
+
 
 
 const Landing = () => {
