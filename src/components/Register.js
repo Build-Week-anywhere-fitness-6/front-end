@@ -18,7 +18,7 @@ export default function Register() {
           <input
             
             name='email'
-            type='text'
+            type='email'
           />
         </label>
 
@@ -33,8 +33,8 @@ export default function Register() {
         <label>Password
           <input
             
-            name='username'
-            type='text'
+            name='password'
+            type='password'
           />
         </label>
 
@@ -47,6 +47,12 @@ export default function Register() {
             <option value='instructor'>Instructor</option>
             <option value='member'>Member</option>
           </select>
+        </label>
+        <label>Instructor Auth Code
+          <input
+            name='authcode'
+            type='text'
+          />
         </label>
         <button>Register</button>
       </div>
