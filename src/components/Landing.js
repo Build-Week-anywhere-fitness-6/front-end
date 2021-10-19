@@ -1,5 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { RiLoginBoxFill } from "react-icons/ri"
+import { GiArchiveRegister } from "react-icons/gi";
 import "./landing.css"
+
 
 const Landing = () => {
     return (
@@ -19,14 +23,14 @@ const Landing = () => {
             <i className="fa fa-envelope w3-xxlarge"></i>
             <p>CONTACT</p>
           </a>
-          <a href="#login" className="w3-bar-item w3-button w3-padding-large w3-black">
-            <i className="fa fa-envelope w3-xxlarge"></i>
+          <Link to="/login" className="w3-bar-item w3-button w3-padding-large w3-black">
+            <RiLoginBoxFill size={45} />
             <p>LOGIN</p>
-          </a>
-          <a href="#register" className="w3-bar-item w3-button w3-padding-large w3-black">
-            <i className="fa fa-envelope w3-xxlarge"></i>
+          </Link>
+          <Link to="/register" className="w3-bar-item w3-button w3-padding-large w3-black">
+          <GiArchiveRegister size={45} />
             <p>REGISTER</p>
-          </a>
+          </Link>
         </nav>
         
         <div className="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
