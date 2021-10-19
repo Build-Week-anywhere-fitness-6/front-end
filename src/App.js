@@ -22,9 +22,9 @@ function App() {
           <Route exact path='/register'>
             <Register />
           </Route>
-          <Route exact path='/client'>
+          <PrivateRoute exact path='/client'>
             <Client />
-          </Route>
+          </PrivateRoute>
         </Switch>
       </BrowserRouter>
     </div>

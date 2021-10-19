@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-export default function Register() {
+export default function Register(props) {
   const { push } = useHistory();
 
   const [credentials, setCredentials] = useState({
@@ -23,13 +23,10 @@ export default function Register() {
     e.preventDefault();
     axios.post('', credentials)
       .then(res => {
-        localStorage.setItem('token', res.data.token)
+        localStorage.setItem('username', res.data.username)
         localStorage.setItem('role', res.data.role)
-        if ('role' === 'instructor') {
-          push('/instructor_classes')
-        } else {
-          push('/client_classes')
-        }
+        console.log("CREDENTIALS: ", credentials.username)
+        props.history.push('/login')
       })
       .catch(err => {
         console.log(err)
@@ -52,12 +49,12 @@ export default function Register() {
 
         <StyledLabel>
           Password
-          <StyledInputs name='username' type='text' onChange={handleChange} />
+          <StyledInputs name='username' type='password' onChange={handleChange} />
         </StyledLabel>
 
         <StyledLabel>
           Role
-          <StyledSelect name='role'>
+          <StyledSelect name='role' onChange={handleChange}>
             <option value=''>- Select an option -</option>
             <option value='instructor'>Instructor</option>
             <option value='member'>Member</option>
