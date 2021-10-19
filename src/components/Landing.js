@@ -37,9 +37,9 @@ const Landing = () => {
           <div className="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
             <a href="#" className="w3-bar-item w3-button" style={{width:'25% !important'}}>HOME</a>
             <a href="#about" className="w3-bar-item w3-button" style={{width:'25% !important'}}>ABOUT</a>
-            <a href="#contact" className="w3-bar-item w3-button" style={{width:'25% !important'}}>CONTACT</a>
-            <a href="#photos" className="w3-bar-item w3-button" style={{width:'25% !important'}}>LOGIN</a>
-            <a href="#contact" className="w3-bar-item w3-button" style={{width:'25% !important'}}>REGISTER</a>
+            <a href="#contact" className="w3-bar-item w3-button" style={{width:'25% !impohrrtant'}}>CONTACT</a>
+            <Link to="/login" className="w3-bar-item w3-button" style={{width:'25% !important'}}>LOGIN</Link>
+            <Link to="/register" className="w3-bar-item w3-button" style={{width:'25% !important'}}>REGISTER</Link>
           </div>
         </div>
         
@@ -57,7 +57,7 @@ const Landing = () => {
             <hr style={{width:'100%'}} className="w3-opacity " />
             <p> These days, fitness classes can be held anywhere- a park, an unfinished basement or a garage- not just at a traditional gym. Certified fitness instructors and clients need an easy way to take the awkwardness out of attendance taking and client payment processing. While you could use several mobile apps to accomplish this, AnywhereFitness is the all-in-one solution to meet your “on-location” fitness class needs. AnywhereFitness makes it painless for Instructors and Clients alike to hold and attend Fitness classes wherever they might be held. </p>
             
-            <button className="w3-button w3-white w3-padding-large w3-hover-black">REGISTER</button>
+            <Link to="/register" className="w3-button w3-white w3-padding-large w3-hover-black">REGISTER</Link>
                   
         
              
