@@ -1,30 +1,32 @@
-import React from "react";
+import React from 'react';
 import PrivateRoute from './components/PrivateRoute';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import Login from './components/Login';
 import Register from './components/Register';
-import Landing from "./components/Landing";
-
-
+import Landing from './components/Landing';
+import Client from './components/Client';
 
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
-          <Switch>
-          <Route exact path ="/">
+        <Switch>
+          <Route exact path='/'>
             <Landing />
-            </Route>
-            <Route exact path ="/login">
+          </Route>
+          <Route exact path='/login'>
             <Login />
-            </Route>
-            <Route exact path ="/register" >
-               <Register />
-            </Route>
+          </Route>
+          <Route exact path='/register'>
+            <Register />
+          </Route>
+          <Route exact path='/client'>
+            <Client />
+          </Route>
         </Switch>
-        </BrowserRouter>
+      </BrowserRouter>
     </div>
   );
 }
