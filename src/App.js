@@ -7,7 +7,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Landing from './components/Landing';
 import Client from './components/Client';
-
+import Teacher from './components/Teacher';
 function App() {
   return (
     <div className='App'>
@@ -24,6 +24,9 @@ function App() {
           </Route>
           <Route exact path='/client'>
             <Client />
+          </Route>
+          <Route exact path='/teacher'>
+            <Teacher />
           </Route>
         </Switch>
       </BrowserRouter>
