@@ -100,13 +100,16 @@ const StyledHeadline = styled.h2`
 
 const StyledCardContainer = styled.div`
   margin: 0 auto;
-  width: 45%;
+  width: 100%;
   border: 1px solid hsl(0, 0%, 82%);
   border-radius: 4px;
   box-shadow: 0 30px 60px -30px hsla(0, 0%, 0%, 0.5);
   padding: 2%;
   background-color: hsl(0, 0%, 100%);
   margin-bottom: 2%;
+  @media (min-width: 769px) {
+    width: 45%;
+  }
 `;
 
 const StyledCards = styled.div`
@@ -117,10 +120,14 @@ const StyledCards = styled.div`
 
 const StyledContainer = styled.div`
   display: flex;
-  flex-flow: row wrap;
+  /* flex-flow: row wrap; */
+  flex-flow: column;
   border-radius: 10px;
   padding: 2%;
   margin: 0 auto;
   margin-bottom: 1%;
-  padding-left: 15%;
+  @media (min-width: 1150px) {
+    flex-flow: row wrap;
+    padding-left: 15%;
+  }
 `;

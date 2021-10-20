@@ -11,8 +11,6 @@ import Client from './components/client/Home';
 import ClientClasses from './components/client/Classes';
 import MakeAClass from './components/MakeAClass';
 
-
-
 function App() {
   return (
     <div className='App'>
