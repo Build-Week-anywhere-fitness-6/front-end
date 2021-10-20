@@ -1,18 +1,51 @@
+import axios from 'axios';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function Login() {
+  const { push } = useHistory();
+
+  const [credentials, setCredentials] = useState({
+    username: '',
+    password: ''
+  })
+
+  const handleChange = e => {
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    axios.post('', credentials)
+      .then(res => {
+        localStorage.setItem('token', res.data.token)
+        if ('role' === 'instructor') {
+          push('/instructor_classes')
+        } else {
+          push('/client')
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   return (
     <StyledForm>
       <StyledTitle>Login</StyledTitle>
-      <StyledFormField>
+      <StyledFormField onSubmit={handleSubmit}>
         <StyledLabel>
           Username
-          <StyledInputs name='username' type='text' />
+          <StyledInputs name='username' type='text' onChange={handleChange}/>
         </StyledLabel>
 
         <StyledLabel>
           Password
-          <StyledInputs name='username' type='text' />
+          <StyledInputs name='username' type='password' onChange={handleChange}/>
         </StyledLabel>
 
         <StyledButton>Log in</StyledButton>
