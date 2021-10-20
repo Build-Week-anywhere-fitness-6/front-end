@@ -266,7 +266,9 @@ const StyledCards = styled.div`
 
 const StyledContainer = styled.div`
   display: flex;
+
   flex-flow: column wrap;
+
   border-radius: 10px;
   padding: 2%;
   margin: 0 auto;

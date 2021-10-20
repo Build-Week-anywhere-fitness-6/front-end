@@ -15,10 +15,10 @@ const Teacher = () =>{
                 <i className="fa fa-home w3-xxlarge"></i>
                 <p>HOME</p>
               </Link>
-              <a href="#about" className="w3-bar-item w3-button w3-padding-large        w3-black">
+              <Link  to='/makeaclass'className="w3-bar-item w3-button w3-padding-large        w3-black">
               <RiCalendarFill size={45} />
                 <p>MAKE A CLASS</p>
-              </a>
+              </Link>
 
               <a href="#contact" className="w3-bar-item w3-button w3-padding-large      w3-black">
                 <i className="fa fa-envelope w3-xxlarge"></i>
@@ -55,6 +55,39 @@ const Teacher = () =>{
             <hr style={{width:'100%'}} className="w3-opacity " />
             <p> </p>
             </div>
+
+            
+
+
+            <div className="w3-padding-64 w3-content w3-text-grey w3-center" id="contact">
+            <h2 className="w3-text-light-grey">Contact Us</h2>
+            <hr style={{width:'100%'}} className="w3-opacity" />
+        
+            <div className="w3-section">
+              <p><i className="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Tennessee, US</p>
+              <p><i className="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: (000)-000-0000</p>
+              <p><i className="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: email@mail.com</p>
+            </div><br />
+            <p>Let's get in touch. Send us a message:</p>
+        
+            <form className='w3-padding-64 w3-content' action="/action_page.php" target="_blank" style={{width:'50%'}}>
+              <p><input className="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name" /></p>
+              <p><input className="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email" /></p>
+              <p><input className="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject" /></p>
+              <p><input className="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message" /></p>
+              <p>
+                <button className="w3-button w3-light-grey w3-padding-large" type="submit">
+                  <i className="fa fa-paper-plane"></i> SEND MESSAGE
+                </button>
+              </p>
+            </form>
+          
+          </div>
+
+
+
+
+
 
 
       
