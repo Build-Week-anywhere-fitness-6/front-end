@@ -34,6 +34,152 @@ export default function Classes() {
 
         <StyledCardContainer>
           <StyledHeadline>Available Classes</StyledHeadline>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+              margin: '2%',
+            }}>
+            <label
+              style={{
+                fontWeight: '700',
+              }}>
+              Filter By Time:
+              <select
+                style={{
+                  width: '100%',
+                  height: '3em',
+                  border: '0.1em solid hsl(0, 0%, 87%)',
+                  borderRadius: '4px',
+                  textIndent: '0.5em',
+                  marginTop: '2%',
+                  marginBottom: '2%',
+                }}>
+                <option>{/* CLASS TIMES */}</option>
+                <option>{/* CLASS TIMES */}</option>
+                <option>{/* CLASS TIMES */}</option>
+                <option>{/* CLASS TIMES */}</option>
+                <option>{/* CLASS TIMES */}</option>
+                <option>{/* CLASS TIMES */}</option>
+              </select>
+            </label>
+            <label
+              style={{
+                fontWeight: '700',
+              }}>
+              Filter By Date:
+              <select
+                style={{
+                  width: '100%',
+                  height: '3em',
+                  border: '0.1em solid hsl(0, 0%, 87%)',
+                  borderRadius: '4px',
+                  textIndent: '0.5em',
+                  marginTop: '2%',
+                  marginBottom: '2%',
+                }}>
+                <option>{/* Dates */}</option>
+                <option>{/* Dates */}</option>
+                <option>{/* Dates */}</option>
+                <option>{/* Dates */}</option>
+                <option>{/* Dates */}</option>
+                <option>{/* Dates */}</option>
+              </select>
+            </label>
+            <label
+              style={{
+                fontWeight: '700',
+              }}>
+              Filter By Duration:
+              <select
+                style={{
+                  width: '100%',
+                  height: '3em',
+                  border: '0.1em solid hsl(0, 0%, 87%)',
+                  borderRadius: '4px',
+                  textIndent: '0.5em',
+                  marginTop: '2%',
+                  marginBottom: '2%',
+                }}>
+                <option>{/* Duration */}</option>
+                <option>{/* Duration */}</option>
+                <option>{/* Duration */}</option>
+                <option>{/* Duration */}</option>
+                <option>{/* Duration */}</option>
+                <option>{/* Duration */}</option>
+              </select>
+            </label>
+            <label
+              style={{
+                fontWeight: '700',
+              }}>
+              Filter By Type:
+              <select
+                style={{
+                  width: '100%',
+                  height: '3em',
+                  border: '0.1em solid hsl(0, 0%, 87%)',
+                  borderRadius: '4px',
+                  textIndent: '0.5em',
+                  marginTop: '2%',
+                  marginBottom: '2%',
+                }}>
+                <option>{/* Duration */}</option>
+                <option>{/* Duration */}</option>
+                <option>{/* Duration */}</option>
+                <option>{/* Duration */}</option>
+                <option>{/* Duration */}</option>
+                <option>{/* Duration */}</option>
+              </select>
+            </label>
+            <label
+              style={{
+                fontWeight: '700',
+              }}>
+              Filter By Intensity:
+              <select
+                style={{
+                  width: '100%',
+                  height: '3em',
+                  border: '0.1em solid hsl(0, 0%, 87%)',
+                  borderRadius: '4px',
+                  textIndent: '0.5em',
+                  marginTop: '2%',
+                  marginBottom: '2%',
+                }}>
+                <option>{/* Intensity */}</option>
+                <option>{/* Intensity */}</option>
+                <option>{/* Intensity */}</option>
+                <option>{/* Intensity */}</option>
+                <option>{/* Intensity */}</option>
+                <option>{/* Intensity */}</option>
+              </select>
+            </label>
+            <label
+              style={{
+                fontWeight: '700',
+              }}>
+              Filter By Location:
+              <select
+                style={{
+                  width: '100%',
+                  height: '3em',
+                  border: '0.1em solid hsl(0, 0%, 87%)',
+                  borderRadius: '4px',
+                  textIndent: '0.5em',
+                  marginTop: '2%',
+                  marginBottom: '2%',
+                }}>
+                <option>{/* Location */}</option>
+                <option>{/* Location */}</option>
+                <option>{/* Location */}</option>
+                <option>{/* Location */}</option>
+                <option>{/* Location */}</option>
+                <option>{/* Location */}</option>
+              </select>
+            </label>
+          </div>
           <StyledCards>
             <StyledClassTitle>Cycling</StyledClassTitle>
             <StyledInstructor>Instructor: Jane Doe</StyledInstructor>
@@ -120,8 +266,9 @@ const StyledCards = styled.div`
 
 const StyledContainer = styled.div`
   display: flex;
-  /* flex-flow: row wrap; */
-  flex-flow: column;
+
+  flex-flow: column wrap;
+
   border-radius: 10px;
   padding: 2%;
   margin: 0 auto;

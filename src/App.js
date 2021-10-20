@@ -9,7 +9,10 @@ import Landing from './components/Landing';
 import Teacher from './components/Teacher';
 import Client from './components/client/Home';
 import ClientClasses from './components/client/Classes';
+
+
 import MakeAClass from './components/MakeAClass';
+
 
 function App() {
   return (
