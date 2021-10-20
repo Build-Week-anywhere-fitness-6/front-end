@@ -1,3 +1,15 @@
+Information for connecting to the endpoints
+Login: /api/fitness/login
+Register: /api/fitness/register
+Logout: /api/fitness/logout
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
