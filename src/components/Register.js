@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-export default function Register() {
+export default function Register(props) {
   const { push } = useHistory();
 
   const [credentials, setCredentials] = useState({
@@ -24,9 +24,11 @@ export default function Register() {
     e.preventDefault();
     axios.post('http://localhost:3000/api/fitness/register', credentials)
       .then(res => {
+
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('role', res.data.role);
         push('/login');
+
       })
       .catch(err => {
         console.log('REGISTER ERROR: ', err);
@@ -49,12 +51,16 @@ export default function Register() {
 
         <StyledLabel>
           Password
+
           <StyledInputs name='password' type='password' value={credentials.password} onChange={handleChange} />
+
         </StyledLabel>
 
         <StyledLabel>
           Role
+
           <StyledSelect name='role' value={credentials.role} onChange={handleChange}>
+
             <option value=''>- Select an option -</option>
             <option value='instructor'>Instructor</option>
             <option value='member'>Member</option>
