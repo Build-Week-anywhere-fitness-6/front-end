@@ -1,18 +1,52 @@
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function Login() {
+  const { push } = useHistory();
+
+  const [credentials, setCredentials] = useState({
+    username: '',
+    password: ''
+  })
+
+  const handleChange = e => {
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    axios.post('http://localhost:3000/api/fitness/login', credentials)
+      .then(res => {
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('role', res.data.role);
+        if ('role' === 'instructor') {
+          push('/teacher')
+        } else {
+          push('/client')
+        }
+      })
+      .catch(err => {
+        console.log('LOGIN ERROR: ', err)
+      })
+  }
+
   return (
     <StyledForm>
       <StyledTitle>Login</StyledTitle>
-      <StyledFormField>
+      <StyledFormField onSubmit={handleSubmit}>
         <StyledLabel>
           Username
-          <StyledInputs name='username' type='text' />
+          <StyledInputs name='username' type='text' value={credentials.username} onChange={handleChange}/>
         </StyledLabel>
 
         <StyledLabel>
           Password
-          <StyledInputs name='username' type='text' />
+          <StyledInputs name='password' type='password' value={credentials.password} onChange={handleChange}/>
         </StyledLabel>
 
         <StyledButton>Log in</StyledButton>

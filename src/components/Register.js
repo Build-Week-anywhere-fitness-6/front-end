@@ -9,7 +9,8 @@ export default function Register() {
   const [credentials, setCredentials] = useState({
     email: '',
     username: '',
-    password: ''
+    password: '', 
+    role: ''
   })
 
   const handleChange = e => {
@@ -21,18 +22,14 @@ export default function Register() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post('', credentials)
+    axios.post('http://localhost:3000/api/fitness/register', credentials)
       .then(res => {
-        localStorage.setItem('token', res.data.token)
-        localStorage.setItem('role', res.data.role)
-        if ('role' === 'instructor') {
-          push('/instructor_classes')
-        } else {
-          push('/client_classes')
-        }
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('role', res.data.role);
+        push('/login');
       })
       .catch(err => {
-        console.log(err)
+        console.log('REGISTER ERROR: ', err);
       })
   }
 
@@ -42,22 +39,22 @@ export default function Register() {
       <StyledFormField onSubmit={handleSubmit}>
         <StyledLabel>
           Email
-          <StyledInputs name='email' type='text' onChange={handleChange} />
+          <StyledInputs name='email' type='text' value={credentials.email} onChange={handleChange} />
         </StyledLabel>
 
         <StyledLabel>
           Username
-          <StyledInputs name='username' type='text' onChange={handleChange} />
+          <StyledInputs name='username' type='text' value={credentials.username} onChange={handleChange} />
         </StyledLabel>
 
         <StyledLabel>
           Password
-          <StyledInputs name='username' type='text' onChange={handleChange} />
+          <StyledInputs name='password' type='password' value={credentials.password} onChange={handleChange} />
         </StyledLabel>
 
         <StyledLabel>
           Role
-          <StyledSelect name='role'>
+          <StyledSelect name='role' value={credentials.role} onChange={handleChange}>
             <option value=''>- Select an option -</option>
             <option value='instructor'>Instructor</option>
             <option value='member'>Member</option>
