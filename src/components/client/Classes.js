@@ -1,7 +1,8 @@
-import { Icon } from '@material-ui/core';
 import styled from 'styled-components';
+import Header from '../DashboardHeader';
+import Sidebar from './Sidebar';
 
-export default function Client() {
+export default function Classes() {
   const handleClassRemove = (evt) => {
     evt.preventDefault();
     //   Remove class function which will remove the class
@@ -12,67 +13,9 @@ export default function Client() {
     //   Add class function which will add class
   };
   return (
-    <div>
-      <div>
-        <StyledWelcomeText>Welcome, Jane Doe!</StyledWelcomeText>
-        <StyledWelcomeText>Here are your week schedules.</StyledWelcomeText>
-      </div>
-      <div>
-        <StyledTable>
-          <StyledRow>
-            <th></th>
-            <th>Week 1</th>
-            <th>Week 2</th>
-            <th>Week 3</th>
-            <th>Week 4</th>
-          </StyledRow>
-          <tr>
-            <StyledCol>Monday</StyledCol>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <StyledCol>Tuesday</StyledCol>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <StyledCol>Wednesday</StyledCol>
-            <td>Cycling</td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <StyledCol>Friday</StyledCol>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <StyledCol>Saturday</StyledCol>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <StyledCol>Sunday</StyledCol>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </StyledTable>
-      </div>
-
-      {/* Need to create Header component to add nav link to classes page */}
-
+    <div className='App'>
+      <Header />
+      <Sidebar />
       <StyledContainer>
         <StyledCardContainer>
           <StyledHeadline>Current Classes</StyledHeadline>
@@ -105,44 +48,6 @@ export default function Client() {
     </div>
   );
 }
-
-const StyledCol = styled.td`
-  background: black;
-  color: white !important;
-  text-transform: uppercase;
-  font-size: 0.6em;
-  text-align: center;
-`;
-
-const StyledRow = styled.tr`
-  background: black;
-  text-transform: uppercase;
-  font-size: 0.6em;
-  text-align: center;
-`;
-
-const StyledTable = styled.table`
-  color: white;
-  margin: 0 auto;
-  width: 80%;
-  height: 60vh;
-  tr {
-    &:nth-child(2n) {
-      background: #eff0f1;
-    }
-    &:nth-child(2n + 3) {
-      background: #fff;
-    }
-  }
-  th,
-  td {
-    padding: 1rem;
-    width: 10em;
-  }
-  td {
-    color: black;
-  }
-`;
 
 const StyledButton = styled.button`
   color: rgba(0, 0, 0, 0.87);
@@ -210,10 +115,6 @@ const StyledCards = styled.div`
   margin: 0 auto;
 `;
 
-const StyledWelcomeText = styled.h1`
-  text-align: center;
-`;
-
 const StyledContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
@@ -221,4 +122,5 @@ const StyledContainer = styled.div`
   padding: 2%;
   margin: 0 auto;
   margin-bottom: 1%;
+  padding-left: 15%;
 `;
