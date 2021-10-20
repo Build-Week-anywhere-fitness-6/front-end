@@ -6,8 +6,11 @@ import './App.css';
 import Login from './components/Login';
 import Register from './components/Register';
 import Landing from './components/Landing';
+
 import Client from './components/client/Home';
 import ClientClasses from './components/client/Classes';
+
+
 
 function App() {
   return (
@@ -23,8 +26,11 @@ function App() {
           <Route exact path='/register'>
             <Register />
           </Route>
-          <Route exact path='/client'>
+          <PrivateRoute exact path='/client'>
             <Client />
+          </PrivateRoute>
+          <Route exact path='/teacher'>
+            <Teacher />
           </Route>
           <Route exact path='/client/classes'>
             <ClientClasses />

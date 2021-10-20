@@ -1,29 +1,60 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-export default function Register() {
+export default function Register(props) {
+  const { push } = useHistory();
+
+  const [credentials, setCredentials] = useState({
+    email: '',
+    username: '',
+    password: ''
+  })
+
+  const handleChange = e => {
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    axios.post('', credentials)
+      .then(res => {
+        localStorage.setItem('username', res.data.username)
+        localStorage.setItem('role', res.data.role)
+        console.log("CREDENTIALS: ", credentials.username)
+        props.history.push('/login')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   return (
     <StyledForm>
       <StyledTitle>Sign Up</StyledTitle>
-      <StyledFormField>
+      <StyledFormField onSubmit={handleSubmit}>
         <StyledLabel>
           Email
-          <StyledInputs name='email' type='text' />
+          <StyledInputs name='email' type='text' onChange={handleChange} />
         </StyledLabel>
 
         <StyledLabel>
           Username
-          <StyledInputs name='username' type='text' />
+          <StyledInputs name='username' type='text' onChange={handleChange} />
         </StyledLabel>
 
         <StyledLabel>
           Password
-          <StyledInputs name='username' type='text' />
+          <StyledInputs name='username' type='password' onChange={handleChange} />
         </StyledLabel>
 
         <StyledLabel>
           Role
-          <StyledSelect name='role'>
+          <StyledSelect name='role' onChange={handleChange}>
             <option value=''>- Select an option -</option>
             <option value='instructor'>Instructor</option>
             <option value='member'>Member</option>
