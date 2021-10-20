@@ -82,7 +82,9 @@ const StyledWelcomeText = styled.h1`
 `;
 
 const StyledDashboardContent = styled.div`
-  margin-left: 10%;
+  @media (min-width: 1150px) {
+    margin-left: 10%;
+  }
 `;
 
 const StyledCol = styled.td`
@@ -104,7 +106,7 @@ const StyledTable = styled.table`
   color: white;
   margin: 0 auto;
   width: 80%;
-  height: 60vh;
+  height: 20vh;
   tr {
     &:nth-child(2n) {
       background: #eff0f1;
@@ -120,5 +122,9 @@ const StyledTable = styled.table`
   }
   td {
     color: black;
+  }
+  @media (min-width: 1150px) {
+    width: 80%;
+    height: 60vh;
   }
 `;

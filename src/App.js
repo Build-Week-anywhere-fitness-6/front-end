@@ -6,11 +6,9 @@ import './App.css';
 import Login from './components/Login';
 import Register from './components/Register';
 import Landing from './components/Landing';
-
+import Teacher from './components/Teacher';
 import Client from './components/client/Home';
 import ClientClasses from './components/client/Classes';
-
-
 
 function App() {
   return (
