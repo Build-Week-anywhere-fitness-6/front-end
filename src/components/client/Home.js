@@ -23,52 +23,52 @@ export default function Home() {
             </StyledRow>
             <tr>
               <StyledCol>Monday</StyledCol>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td data-label='Week 1'></td>
+              <td data-label='Week 2'></td>
+              <td data-label='Week 3'></td>
+              <td data-label='Week 4'></td>
             </tr>
             <tr>
               <StyledCol>Tuesday</StyledCol>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td data-label='Week 1'></td>
+              <td data-label='Week 2'></td>
+              <td data-label='Week 3'></td>
+              <td data-label='Week 4'></td>
             </tr>
             <tr>
               <StyledCol>Wednesday</StyledCol>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td data-label='Week 1'></td>
+              <td data-label='Week 2'></td>
+              <td data-label='Week 3'></td>
+              <td data-label='Week 4'></td>
             </tr>
             <tr>
               <StyledCol>Thursday</StyledCol>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td data-label='Week 1'></td>
+              <td data-label='Week 2'></td>
+              <td data-label='Week 3'></td>
+              <td data-label='Week 4'></td>
             </tr>
             <tr>
               <StyledCol>Friday</StyledCol>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td data-label='Week 1'></td>
+              <td data-label='Week 2'></td>
+              <td data-label='Week 3'></td>
+              <td data-label='Week 4'></td>
             </tr>
             <tr>
               <StyledCol>Saturday</StyledCol>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td data-label='Week 1'></td>
+              <td data-label='Week 2'></td>
+              <td data-label='Week 3'></td>
+              <td data-label='Week 4'></td>
             </tr>
             <tr>
               <StyledCol>Sunday</StyledCol>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td data-label='Week 1'></td>
+              <td data-label='Week 2'></td>
+              <td data-label='Week 3'></td>
+              <td data-label='Week 4'></td>
             </tr>
           </StyledTable>
         </div>
@@ -95,8 +95,11 @@ const StyledCol = styled.td`
   background: black;
   color: white !important;
   text-transform: uppercase;
-  font-size: 0.6em;
+  font-size: 0.8rem;
   text-align: center;
+  @media (min-width: 769px) {
+    font-size: 0.6rem;
+  }
 `;
 
 const StyledRow = styled.tr`
@@ -109,26 +112,58 @@ const StyledRow = styled.tr`
 const StyledTable = styled.table`
   color: white;
   margin: 0 auto;
-  width: 80%;
-  height: 20vh;
+  width: 100%;
+  display: block;
   tr {
+    display: block;
+    text-align: right;
+    position: relative;
     &:nth-child(2n) {
       background: #eff0f1;
     }
     &:nth-child(2n + 3) {
       background: #fff;
     }
+    @media (min-width: 769px) {
+      display: table-row;
+      text-align: center;
+    }
   }
-  th,
-  td {
+  th {
+    display: none;
     padding: 1rem;
     width: 10em;
+    @media (min-width: 769px) {
+      display: table-cell;
+    }
   }
   td {
+    display: block;
     color: black;
+    position: relative;
+    padding: 1.5rem;
+    width: 10em;
+    border-bottom: 1px solid black;
+    @media (min-width: 769px) {
+      display: table-cell;
+      padding: 1rem;
+      border: none;
+    }
+    @media (max-width: 769px) {
+      width: 100%;
+      &::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        text-align: left;
+        padding-bottom: 2%;
+      }
+    }
   }
   @media (min-width: 769px) {
     width: 80%;
     height: 60vh;
+    display: table;
   }
 `;
