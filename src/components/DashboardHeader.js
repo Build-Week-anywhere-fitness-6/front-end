@@ -7,6 +7,9 @@ export default function Header() {
       <StyledHeaderTitle>Anywhere Fitness</StyledHeaderTitle>
       <StyledUl>
         <li>
+          <Styledlink href='#'>Dashboard</Styledlink>
+        </li>
+        <li>
           <Styledlink href='#'>Classes</Styledlink>
         </li>
         <li>

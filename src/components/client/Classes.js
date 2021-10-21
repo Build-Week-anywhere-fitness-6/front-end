@@ -125,12 +125,12 @@ export default function Classes() {
                   marginTop: '2%',
                   marginBottom: '2%',
                 }}>
-                <option>{/* Duration */}</option>
-                <option>{/* Duration */}</option>
-                <option>{/* Duration */}</option>
-                <option>{/* Duration */}</option>
-                <option>{/* Duration */}</option>
-                <option>{/* Duration */}</option>
+                <option>{/* Type */}</option>
+                <option>{/* Type */}</option>
+                <option>{/* Type */}</option>
+                <option>{/* Type */}</option>
+                <option>{/* Type */}</option>
+                <option>{/* Type */}</option>
               </select>
             </label>
             <label
@@ -235,6 +235,7 @@ const StyledClassTitle = styled.h2`
   font-weight: 500;
   margin: 0;
   margin-bottom: 0.5%;
+  position: relative;
 `;
 
 const StyledHeadline = styled.h2`
@@ -273,8 +274,8 @@ const StyledContainer = styled.div`
   padding: 2%;
   margin: 0 auto;
   margin-bottom: 1%;
-  @media (min-width: 1150px) {
+  @media (min-width: 769px) {
     flex-flow: row wrap;
-    padding-left: 15%;
+    margin-left: calc(15.625rem - 1%);
   }
 `;

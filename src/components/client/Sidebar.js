@@ -46,7 +46,7 @@ const StyledSideBarList = styled.ul`
 
 const StyledSideBar = styled.div`
   height: 100%;
-  width: 250px;
+  width: 15.625rem;
   background-color: black;
   margin-top: 0;
   position: fixed;

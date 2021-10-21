@@ -79,11 +79,15 @@ export default function Home() {
 
 const StyledWelcomeText = styled.h1`
   text-align: center;
+  font-size: 1.4rem;
+  @media (min-width: 769px) {
+    font-size: 2rem;
+  }
 `;
 
 const StyledDashboardContent = styled.div`
-  @media (min-width: 1150px) {
-    margin-left: 10%;
+  @media (min-width: 769px) {
+    margin-left: calc(15.625rem - 6%);
   }
 `;
 
@@ -123,7 +127,7 @@ const StyledTable = styled.table`
   td {
     color: black;
   }
-  @media (min-width: 1150px) {
+  @media (min-width: 769px) {
     width: 80%;
     height: 60vh;
   }
