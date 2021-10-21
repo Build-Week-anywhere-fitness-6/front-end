@@ -3,11 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-export default function Register(props) {
+export default function Register() {
   const { push } = useHistory();
 
   const [credentials, setCredentials] = useState({
-    email: '',
     username: '',
     password: ''
   })
@@ -21,12 +20,11 @@ export default function Register(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post('', credentials)
+    axios.post('http://localhost:5000/api/fitness/register', credentials)
       .then(res => {
         localStorage.setItem('username', res.data.username)
         localStorage.setItem('role', res.data.role)
-        console.log("CREDENTIALS: ", credentials.username)
-        props.history.push('/login')
+        push('/login')
       })
       .catch(err => {
         console.log(err)

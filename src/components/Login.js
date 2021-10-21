@@ -20,11 +20,11 @@ export default function Login() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post('', credentials)
+    axios.post('http://localhost:5000/api/fitness/login', credentials)
       .then(res => {
         localStorage.setItem('token', res.data.token)
         if ('role' === 'instructor') {
-          push('/instructor_classes')
+          push('/teacher')
         } else {
           push('/client')
         }

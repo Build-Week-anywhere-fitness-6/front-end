@@ -1,16 +1,32 @@
+import React, { useState } from 'react';
+import axiosWithAuth from '../utils/axiosWithAuth';
 import { Icon } from '@material-ui/core';
 import styled from 'styled-components';
 
 export default function Client() {
-  const handleClassRemove = (evt) => {
-    evt.preventDefault();
+
+  const [classDetails, setClassDetails] = useState({
+    class_name: '',
+    type: '',
+    start_time: '',
+    duration: '',
+    intensity: '',
+    location: '',
+    max_size: '',
+    registered: ''
+  });
+
+  const handleClassRemove = (id) => {
     //   Remove class function which will remove the class
+    axiosWithAuth().delete(`http://localhost:5000/api/fitness/${id}`)
   };
 
-  const handleClassAdd = (evt) => {
-    evt.preventDefault();
+  const handleClassAdd = (e) => {
+    e.preventDefault();
     //   Add class function which will add class
+    axiosWithAuth().post('http://localhost:5000/api/fitness/')
   };
+
   return (
     <div>
       <div>
@@ -92,10 +108,10 @@ export default function Client() {
         <StyledCardContainer>
           <StyledHeadline>Available Classes</StyledHeadline>
           <StyledCards>
-            <StyledClassTitle>Cycling</StyledClassTitle>
+            <StyledClassTitle value={classDetails.class_name}>Cycling</StyledClassTitle>
             <StyledInstructor>Instructor: Jane Doe</StyledInstructor>
-            <StyledDate>Date: October 19, 2021</StyledDate>
-            <StyledClassDescription>
+            <StyledDate value={classDetails.start_time}>Date: October 19, 2021</StyledDate>
+            <StyledClassDescription value={classDetails.type}>
               Class description goes here
             </StyledClassDescription>
             <StyledButton onClick={handleClassAdd}>Add Class</StyledButton>
