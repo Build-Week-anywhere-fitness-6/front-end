@@ -6,7 +6,7 @@ const Logout = () => {
     const { push } = useHistory();
 
     useEffect(() => {
-        axiosWithAuth().post('http://localhost:3000/api/fitness/logout')
+        axiosWithAuth().post('http://localhost:5000/api/fitness/logout')
             .then(res => {
                 localStorage.removeItem('token')
                 push('/login')
