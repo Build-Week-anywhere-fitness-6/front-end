@@ -1,5 +1,8 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
+
+
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -22,7 +25,8 @@ export default function Login() {
     e.preventDefault();
     axios.post('http://localhost:5000/api/fitness/login', credentials)
       .then(res => {
-        localStorage.setItem('token', res.data.token)
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('role', res.data.role);
         if ('role' === 'instructor') {
           push('/teacher')
         } else {
@@ -30,7 +34,9 @@ export default function Login() {
         }
       })
       .catch(err => {
-        console.log(err)
+
+        console.log('LOGIN ERROR: ', err)
+
       })
   }
 
@@ -40,12 +46,16 @@ export default function Login() {
       <StyledFormField onSubmit={handleSubmit}>
         <StyledLabel>
           Username
-          <StyledInputs name='username' type='text' onChange={handleChange}/>
+
+          <StyledInputs name='username' type='text' value={credentials.username} onChange={handleChange}/>
+
         </StyledLabel>
 
         <StyledLabel>
           Password
-          <StyledInputs name='username' type='password' onChange={handleChange}/>
+
+          <StyledInputs name='password' type='password' value={credentials.password} onChange={handleChange}/>
+
         </StyledLabel>
 
         <StyledButton>Log in</StyledButton>
